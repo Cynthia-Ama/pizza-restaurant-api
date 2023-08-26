@@ -6,7 +6,6 @@ require("dotenv").config()
 const ProductRoute = require("./routes/Product")
 const OrderRoute = require("./routes/Order")
 
-
 app.use(cors())
 app.use(express.json())
 

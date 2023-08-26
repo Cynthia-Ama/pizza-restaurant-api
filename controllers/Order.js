@@ -3,10 +3,13 @@ const Order = require("../models/Order")
 async function createOrder(req, res){
     try {
         const order =  await Order.create(req.body)
+        if(!order){
+            res.status(500).json("Please provide your details")
+        }
         res.status(201).json(order)
     } 
     catch (error) {
-        res.status(500).json(err)
+        res.status(500).json("Please provide your details!")
     }
 }
 
