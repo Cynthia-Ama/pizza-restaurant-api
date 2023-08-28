@@ -21,20 +21,15 @@ const port = process.env.PORT || 4000
 const start = async() =>{
     try {
         await connectdb(process.env.MONGO_URI)
-        // app.listen(port, ()=>{
-        //     console.log(`server is listening on port 8800`)
-        // })
+        app.listen(port, ()=>{
+            console.log(`server is listening on port 8800`)
+        })
     } catch (error) {
         console.log(error)
         process.exit(1)
     }
 }
 
-// start()
+start()
 
-start().then(()=>{
-    app.listen(port, ()=>{
-        console.log(`server is listening on port ${port}`)
-    })
-})
 
